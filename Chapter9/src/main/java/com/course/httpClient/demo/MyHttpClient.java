@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class MyHttpClient {
     @Test
-    public void test(){
+    public void test1(){
         String res=null;
         //使用get方法
         HttpGet get=new HttpGet("http://www.baidu.com");
@@ -36,7 +36,6 @@ public class MyHttpClient {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
 
