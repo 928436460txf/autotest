@@ -6,12 +6,13 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
-import java.io.Reader;
+import java.io.InputStream;
 
 public class DatabaseUtil  {
     public static SqlSession getSqlSession() throws IOException {
-        //获取配置的资源文件
-        Reader reader = Resources.getResourceAsReader("databaseConfig.xml");
+        //获取配置的资源文件 Reader和InputerStream两种都可以
+       // Reader reader = Resources.getResourceAsReader("databaseConfig.xml");
+        InputStream reader=Resources.getResourceAsStream("databaseConfig.xml");
         SqlSessionFactory factory= new SqlSessionFactoryBuilder().build(reader);
 
         //SqlSession就是能够执行配置文件中的sql语句。
